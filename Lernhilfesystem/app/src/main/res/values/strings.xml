@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Lernhilfesystem</string>
+    <string name="confirm">Confirm</string>
+    <string name="choose_date">Choose date</string>
+    <string name="text">Text:</string>
+    <string name="due_to">Due to:</string>
+    <string name="note_name">Notename:</string>
+    <string name="subject_name">Subjectname:</string>
+    <string name="allNotesFor">All notes for:</string>
+    <string name="subjects">Subjects</string>
+    <string name="notename">Notename:</string>
+</resources>
