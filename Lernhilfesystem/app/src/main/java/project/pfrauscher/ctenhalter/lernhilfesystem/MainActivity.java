@@ -24,13 +24,19 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {//ctenhalter
 
 
-                Intent showAllNotesIntent = new Intent();
-                startActivity(showAllNotesIntent);
+                showAllNotesForSubject(id);
 
             }
         });
     registerForContextMenu(listSubjects);
 }
+
+    private void showAllNotesForSubject(long id) {
+        Intent showAllNotesIntent = new Intent(this, AllNotesActivity.class);
+        showAllNotesIntent.putExtra("id", id);
+        startActivity(showAllNotesIntent);
+    }
+
     private void readFromDatabase() {
 
 

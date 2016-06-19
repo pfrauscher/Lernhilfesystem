@@ -9,4 +9,8 @@
     <string name="allNotesFor">All notes for:</string>
     <string name="subjects">Subjects</string>
     <string name="notename">Notename:</string>
+    <string name="addSubject">Add Subject</string>
+    <string name="deleteSubject">Delete Subject</string>
+    <string name="context_delete">Delete</string>
+    <string name="context_edit">Edit</string>
 </resources>

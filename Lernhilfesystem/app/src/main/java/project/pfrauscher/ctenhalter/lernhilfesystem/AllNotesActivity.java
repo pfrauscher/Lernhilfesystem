@@ -12,33 +12,35 @@ import android.widget.Spinner;
 /**
  * Created by ctenhalter on 23.05.2016.
  */
-public class AllNotesActivity extends Activity { //ctenhalter
 
-    Spinner spinnerSubjectName= (Spinner) findViewById(R.id.subjectSpinner);
-            ListView listNotes = (ListView) findViewById(R.id.noteList);
+public class AllNotesActivity extends Activity { //ctenhalter
+    Intent showNote;
+    Spinner spinnerSubjectName = (Spinner) findViewById(R.id.subjectSpinner);
+    ListView listNotes = (ListView) findViewById(R.id.noteList);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {//ctenhalter
         super.onCreate(savedInstanceState);
         setContentView(R.layout.all_notes_for);
 
-        readFromDatabase ();
+        readFromDatabase();
+        showNote = new Intent(this, ShowNoteActivity.class);
 
-        if (listNotes.getItemAtPosition(0)!=null){
+        if (listNotes.getItemAtPosition(0) != null) {
 
-        listNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-
-                Intent showNote = new Intent(this,ShowNoteActivity.class);
-                showNote.putExtra("id",id);//db zum anzeigen
-                startActivity(showNote);
+            listNotes.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                @Override
+                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
 
-            }
-        });
-    }}
+                    showNote.putExtra("id", id);//db zum anzeigen
+                    startActivity(showNote);
+
+
+                }
+            });
+        }
+    }
 
 
     private void readFromDatabase() {
